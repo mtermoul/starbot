@@ -1,0 +1,1 @@
+worker: celery -A speed_dial_alerts.taskapp worker -B -l info
