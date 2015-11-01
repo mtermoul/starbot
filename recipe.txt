@@ -19,6 +19,8 @@ $ heroku addons:add redistogo:nano
 
 
 $ heroku git:remote --app speed-dial-alerts (if the application is already created, this will attach the remote to git)
+
+
 $ heroku addons:create heroku-postgresql:hobby-dev --app speed-dial-alerts
 $ heroku config:set DJANGO_SECRET_KEY=`openssl rand -base64 32` --app speed-dial-alerts
 $ heroku ps:scale worker=1 --app speed-dial-alerts (to enable dyno for celery task)
