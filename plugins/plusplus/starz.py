@@ -5,7 +5,7 @@ import os
 
 crontable = []
 outputs = []
-redis_url = os.getenv('REDIS_URL', 'redis://localhost:6379')
+redis_url = os.getenv('REDIS_URL', 'redis://localhost:6379') # read from env variables on server
 
 def process_message(data):
 	# this plug in will match any message that has <user>** and output a message
