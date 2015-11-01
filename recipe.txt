@@ -4,7 +4,10 @@ recipe:
 Registed new slack bot and ket the api token:
 
 user: starbot
-api token: xoxb-13637162039-T55qtJf07DEZjjAaHRR4FpoO
+api token: xoxb-13637162039-T55qtJf07DEZjjAaHRR4FpoO (betaworks)
+
+api token: xoxb-13661669505-JNCAgtERvHcy14CZfnhS9Bzz (plus plus)
+
 
 slackbot
 -----------------------------------
@@ -19,9 +22,8 @@ $ heroku addons:add redistogo:nano
 
 
 $ heroku git:remote --app speed-dial-alerts (if the application is already created, this will attach the remote to git)
-
-
 $ heroku addons:create heroku-postgresql:hobby-dev --app speed-dial-alerts
 $ heroku config:set DJANGO_SECRET_KEY=`openssl rand -base64 32` --app speed-dial-alerts
 $ heroku ps:scale worker=1 --app speed-dial-alerts (to enable dyno for celery task)
+$ heroku ps:stop worker.1 --app slack-starbot-dev (stop the bot)
 
