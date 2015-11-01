@@ -6,12 +6,18 @@ Registed new slack bot and ket the api token:
 user: starbot
 api token: xoxb-13637162039-T55qtJf07DEZjjAaHRR4FpoO
 
+slackbot
+-----------------------------------
+$ python rtmbot.py -c doc/example-config/rtmbot.conf (to start slackbot)
 
 HEROKU installation:
 -----------------------------------
-heroku create my-company-slackbot
-heroku create --app speed-dial-alerts --buildpacks https://github.com/heroku/heroku-buildpack-python
-heroku addons:add redistogo:nano
+$ heroku apps:create slack-starbot
+$ heroku buildpacks:set https://github.com/heroku/heroku-buildpack-python --app slack-starbot
+$ heroku addons:create heroku-redis:hobby-dev
+$ heroku addons:add redistogo:nano
+
+
 $ heroku git:remote --app speed-dial-alerts (if the application is already created, this will attach the remote to git)
 $ heroku addons:create heroku-postgresql:hobby-dev --app speed-dial-alerts
 $ heroku config:set DJANGO_SECRET_KEY=`openssl rand -base64 32` --app speed-dial-alerts
